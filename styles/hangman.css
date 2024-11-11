@@ -1,3 +1,32 @@
 * {
     box-sizing: border-box;
+    margin: 0;
 }
+
+html {
+    max-width: 100vh;
+}
+
+body {
+    height: 100%;
+    background-color: #524948;
+}
+
+.page-title {
+    background-color: beige;
+    color: #444054;
+    text-align: center;
+    font-size: 2rem;
+}
+
+p {
+    background-color: #666370;
+    color: aquamarine;
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 16px;
+}
+
+
+
+
