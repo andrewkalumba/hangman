@@ -1,10 +1,10 @@
 //alert("Welcome");
 
-  var words=[ "spain", "sweden", "england", "denmark", "uganda",
+  const words=[ "spain", "sweden", "england", "denmark", "uganda",
     "norway", "usa", "poland", "france", "sudan", "germany"];
 
-    var word=words[Math.floor(Math.random()*words.length)];
-    var answerArray=[];
+    const word = words[Math.floor(Math.random() * words.length)];
+    const answerArray=[];
     for (var i=0; i<word.length; i++)
     {
        answerArray[i] = "_";
@@ -14,27 +14,28 @@
     var lives=word.length;
     lives=lives+2;
     var remainingLetters = word.length;
-    alert('lets start the game')
+    alert('Lets start the game \nGuess the country name!');
     console.log('Lets start the game!\n');
+
     while (remainingLetters>0) {
       alert(answerArray.join(" ")) 
-       console.log(answerArray.join(" "));
+      console.log(answerArray.join(" "));
 
        if (lives==1) {
-          alert("You have one life left")
-          console.log('You have 1 life left.');
+          alert("You have only one life left")
+          console.log('You have only one life left.');
        }
     
        else if(lives>1) {
-          alert('You have ' + lives + ' lives left!') 
+          alert('You have ' + lives + ' lives left!');
           console.log('You have ' + lives + ' lives left.');
        }
     
-       var guess  = prompt('Guess a letter. ');
+       var guess  = prompt('Guess a letter.');
     
        if (guessArray.includes(guess)) {
           alert('Already chosen') 
-           console.log('Already chosen. ');
+           console.log('Already chosen.');
        }
        
        guessArray.push(guess);
@@ -47,12 +48,13 @@
           
        } else if(!word.includes(guess)) {
            lives--;
+           alert('One life lost');
            console.log('One life lost.');
 
        } else if (lives==0) {
-           alert('Sorry, you lost!') 
-           console.log('Sorry, you lost');
-           
+           alert('Oof') 
+           console.log('Oof');
+
        } else {
            for (var j=0; j<word.length; j++)
            {
@@ -64,8 +66,8 @@
            }
        }
     
-       if (lives==0)
-       {
+       if (lives==0) {
+        alert('Sorry. you have lost lose!!');
            break;
        }
     }
@@ -78,5 +80,19 @@
     alert('The word was ' + word + '!');
     alert('Bye');
     
+
+       /*function allLetter(inputtxt)
+    {
+     var letters = /^[A-Za-z]+$/;
+     if(inputtxt.value.match(letters))
+       {
+        return true;
+       }
+     else
+       {
+       alert("message");
+       return false;
+       }
+    }*/
     
   
