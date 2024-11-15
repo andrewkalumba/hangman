@@ -1,15 +1,22 @@
 * {
     box-sizing: border-box;
-    margin: 0;
 }
 
 html {
-    max-width: 100vh;
+    height: 100vh;
 }
 
 body {
     height: 100%;
     background-color: #524948;
+    margin: 0;
+}
+
+.header {
+    background-color: #524948;
+    color: blueviolet;
+    padding: 16px;
+    margin: 0;
 }
 
 .page-title {
@@ -17,6 +24,8 @@ body {
     color: #444054;
     text-align: center;
     font-size: 2rem;
+    padding: 16px;
+    margin: 0;
 }
 
 p {
@@ -24,7 +33,7 @@ p {
     color: aquamarine;
     font-size: 1.2rem;
     text-align: center;
-    margin: 16px;
+    margin: 0;
 }
 
 

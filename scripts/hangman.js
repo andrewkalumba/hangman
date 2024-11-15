@@ -1,9 +1,8 @@
 //alert("Welcome");
 
-const words = ["spain", "sweden", "england", "denmark", "uganda",
-  "norway", "usa", "poland", "france", "sudan", "germany"];
+const countries = ["spain", "sweden", "england", "denmark", "uganda", "norway", "usa", "poland", "france", "sudan", "germany"]
 
-const word = () => words[Math.floor(Math.random() * words.length)];
+const word = () => countries[Math.floor(Math.random() * countries.length)];
 const answerArray = [];
 const VALIDATION = /^[a-zA-Z]{1,1}$/; //checks (^)the beginning of the validation and checks all that is inside the brackets, the (1) means it should be one and the second sets a limit.
 
@@ -22,15 +21,16 @@ for (let i = 0; i < pickedCountry.length; i++) {
 alert('Lets start the game \nGuess the country name!');
 console.log('Lets start the game!\n');
 console.log(pickedCountry)
+alert('The country has ' + lives + ' letters!!!')
 
 while (hasWon === false) {
 
-  //alert(answerArray.join(" "));
+  alert(answerArray.join(" "));
 
   let guess = prompt('Guess a letter.');
 
   if (guess === null) {
-    alert("Game canceled!")
+    alert("Game cancelled!")
     break;
   }
 
@@ -46,10 +46,13 @@ while (hasWon === false) {
       for (let i = 0; i < pickedCountry.length; i++) { // gives the same amount of letters as in the word beginning guessed
         if (pickedCountry[i] === guess) {
           answerArray[i] = guess;
-          console.log(i)
+          //console.log(i)
         }
       }
-      alert(answerArray.join(" "));
+      if (answerArray.join("") === pickedCountry) {
+        alert(`Congrats!!! You have won and the country is ${pickedCountry}`);
+        break;
+      }
       /*if answerArray = picked country, its a win and we need to quit the game or close the loop*/
     }
     else {
@@ -74,5 +77,4 @@ while (hasWon === false) {
   }
 }
 
-alert(answerArray.join(" "));
-alert('Bye');
+alert('Refresh to play again');
