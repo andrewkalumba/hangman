@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    margin: 0;
 }
 
 html {
@@ -9,13 +10,6 @@ html {
 body {
     height: 100%;
     background-color: #524948;
-    margin: 0;
-}
-
-.header {
-    background-color: #524948;
-    color: blueviolet;
-    padding: 16px;
     margin: 0;
 }
 
@@ -33,6 +27,7 @@ p {
     color: aquamarine;
     font-size: 1.2rem;
     text-align: center;
+    padding: 16px;
     margin: 0;
 }
 
