@@ -62,6 +62,13 @@ while (lives > 0) {
         alert(`Wrong ${guess} letter or already chosen`)
     }
 
+  } else
+    alert("Insert a letter and not more than one");
+}
+
+alert('Refresh to play again');
+
+
     /*if (lives > 1) {
      alert('You have ' + lives + ' lives left!');
    }  */
@@ -78,8 +85,3 @@ while (lives > 0) {
        }
      }
    }*/
-  } else
-    alert("Insert a letter and not more than one");
-}
-
-alert('Refresh to play again');
