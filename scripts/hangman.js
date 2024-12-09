@@ -47,10 +47,10 @@ while (lives > 0 && hasWon === false) {
 
       if (!wrongLettersGuessed.includes(guess)) {
         wrongLettersGuessed.push(guess);
-        alert(`Letter '${guess}' doesn't exist in this word!\nYou have ${lives} lives left to play \n wrong letters guessed: ${wrongLettersGuessed}`)
+        alert(`Letter '${guess}' doesn't exist in this word!\nYou have ${lives} lives left to play \n wrong letter guessed: ${wrongLettersGuessed}`)
 
       } else
-        alert(`Wrong ${guess} letter or already chosen! You have ${lives}lives left to play`)
+        alert(`letter already chosen! You have ${lives} lives left to play`)
     }
 
     if (lives === 0) {
