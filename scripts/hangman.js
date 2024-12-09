@@ -1,7 +1,5 @@
 //alert("Welcome");
-
 const countries = ["spain", "sweden", "england", "denmark", "uganda", "norway", "usa", "poland", "france", "sudan", "germany"]
-
 
 const word = () => countries[Math.floor(Math.random() * countries.length)];
 const answerArray = [];
@@ -24,16 +22,11 @@ console.log('Lets start the game!\n');
 console.log(pickedCountry)
 alert('The country has ' + lives + ' letters!!!')
 
-while (lives > 0) {
+while (lives > 0 && hasWon === false) {
 
   alert(answerArray.join(" "));
 
   let guess = prompt('Guess a letter');
-
-  if (guess === null) {
-    alert("Game cancelled!")
-    break;
-  }
 
   if (VALIDATION.test(guess)) {
     /*if the guess exists in the word that is picked, we go into for loop*/
@@ -44,22 +37,24 @@ while (lives > 0) {
 
       if (answerArray.join("") === pickedCountry) {
         alert(`Congrats!!! You have won and the country is ${pickedCountry}`);
-        break;
+        hasWon = true;
       }
       /*if answerArray = picked country, its a win and we need to quit the game or close the loop*/
+
     } else {
       lives--;
       /* check if the life is zero and we end the game and reset the game*/
-      if (lives === 0) {
-        alert(`You have lost the game!! The right one was ${pickedCountry}`)
-        break;
-      }
 
       if (!wrongLettersGuessed.includes(guess)) {
         wrongLettersGuessed.push(guess);
-        alert(`Letter '${guess}' doesn't exist in this word`)
+        alert(`Letter '${guess}' doesn't exist in this word!\nYou have ${lives} lives left to play \n wrong letters guessed: ${wrongLettersGuessed}`)
+
       } else
-        alert(`Wrong ${guess} letter or already chosen`)
+        alert(`Wrong ${guess} letter or already chosen! You have ${lives}lives left to play`)
+    }
+
+    if (lives === 0) {
+      alert(`You have lost the game!! The right one was ${pickedCountry}`)
     }
 
   } else
@@ -67,21 +62,3 @@ while (lives > 0) {
 }
 
 alert('Refresh to play again');
-
-
-    /*if (lives > 1) {
-     alert('You have ' + lives + ' lives left!');
-   }  */
-
-
-    /* else if (lives === 1) {
-       alert("You have only one life left")
-     }
-    
-     
-         else {
-           guessArray.push(guess);
-         }
-       }
-     }
-   }*/
